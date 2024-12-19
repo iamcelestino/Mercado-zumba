@@ -18,7 +18,7 @@
                                 </div>
                                 <div>
                                     <label class="block my-2 text-white" for="">Palavra Passe</label>
-                                    <input class="w-full p-[0.7rem] rounded-md" type="text" placeholder="Data de Nascimento" name="">
+                                    <input class="w-full p-[0.7rem] rounded-md" type="password" placeholder="Data de Nascimento" name="password">
                                 </div>
                             </div>
                             <p class="mt-4 text-center text-white">Ainda nao possui uma conta? <a class="text-red-400 inline-block" href="<?= BASE_URL?>cadastro">Crie Agora</a></p>
