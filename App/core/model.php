@@ -71,7 +71,7 @@ class Model extends Database
         return $data;
     }
 
-    public function insert(array $data): array|object 
+    public function insert(array $data): bool 
     {
         if(property_exists($this , 'allowed_columns')) {
 
@@ -85,7 +85,7 @@ class Model extends Database
 
         if(property_exists($this, 'before_insert')) {
 
-            foreach($tis->before_insert as $function) {
+            foreach($this->before_insert as $function) {
                 $data = $this->$function($data);
             }
         }
@@ -96,7 +96,7 @@ class Model extends Database
 
         $query = "INSERT INTO $this->table($columns) VALUES(:$values)";
 
-        return $this->query($data, $data);
+        return $this->query($query, $data);
 
     }
 

@@ -4,7 +4,7 @@
   <div class="flex items-center justify-between">
     <div class="flex items-center">
         <ion-icon class="text-3xl" name="pie-chart"></ion-icon>
-        <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">dispon</a></h1>
+        <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">CONOTA</a></h1>
     </div>
     <button class="text-white focus:outline-none" onclick="toggleMenu()">
       <span class="block w-6 h-0.5 bg-white mb-1"></span>
@@ -99,15 +99,15 @@
 
     <div class="sm:grid grid-cols-2 gap-6">
         <div class="bg-white shadow-lg rounded-lg p-8">
-            <h1 class="font-bold">Top Suppliers</h1>
+            <h1 class="font-bold">Top 5 Estudantes</h1>
             <div class="flex items-center justify-between border-b mt-4 py-2">
                 <h4 class="font-bold"></h4>
-                <p class="font-medium">AOA </p>
+                <p class="font-medium"></p>
             </div>
         </div>
 
         <div class="shadow-lg rounded-lg p-8">
-            <h1 class="font-bold mb-2">Top 3 Suplliers</h1>
+            <h1 class="font-bold mb-2"></h1>
             <div class="">
                 <div class="loader"></div>
             </div>
@@ -118,27 +118,29 @@
         <div class="container mx-auto p-4">
           <div class="overflow-x-auto">
             <div class="sm:flex items-center justify-between mb-4">
-              <h1 class="font-bold text-3xl">All Suppliers</h1>
+              <h1 class="font-bold text-3xl">Estudantes</h1>
             </div>
             <table class="min-w-full bg-white ">
               <thead>
                 <tr>
-                  <th class="px-4 py-2 border-b">Name</th>
+                  <th class="px-4 py-2 border-b">Nome</th>
                   <th class="px-4 py-2 border-b">Email</th>
-                  <th class="px-4 py-2 border-b">Address</th>
-                  <th class="px-4 py-2 border-b">Start</th>
+                  <th class="px-4 py-2 border-b">Endereco</th>
+                  <th class="px-4 py-2 border-b">Diciplina</th>
+                  <th class="px-4 py-2 border-b">Resultado Final</th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="text-center">
-                  <td class="px-4 py-2 border-b"></td>
-                  <td class="px-4 py-2 border-b"></td>
-                  <td class="px-4 py-2 border-b"></td>
-                  <td class="px-4 py-2 border-b"></td>
+                  <td class="px-4 py-2 border-b">Celestino Trosso</td>
+                  <td class="px-4 py-2 border-b">trcelestino@gmail.com</td>
+                  <td class="px-4 py-2 border-b">Benguela, vila das acacias</td>
+                  <td class="px-4 py-2 border-b">Informatica</td>
+                  <td class="px-4 py-2 border-b">Aprovado</td>
                 </tr>
               </tbody>
             </table>
-                <h1>THERE'S NO SUPPLIERS YET</h1>
+                <h1></h1>
           </div>
         </div>
     </div>
