@@ -14,7 +14,9 @@ class Usuario extends Model
         'palavra_passe'
     ];
 
-    protected array $before_insert = [];
+    protected array $before_insert = [
+        'hash_password'
+    ];
 
     public function validar(array $dados_usuario): bool
     {
@@ -34,5 +36,11 @@ class Usuario extends Model
             return true;
         }
         return false;
+    }
+
+    public function hash_password(array $dados_usuario): array 
+    {
+        $dados_usuario['palavra_passe'] = password_hash($dados_usuario['palavra_passe'], PASSWORD_DEFAULT);
+        return $dados_usuario;
     }
 }

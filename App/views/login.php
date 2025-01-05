@@ -10,15 +10,15 @@
                             <h1 class="text-3xl mb-4 text-white">BEM VINDO<br><span class="text-red-500 font-bold">CONOTA</span></h1>
                             <p class="text-white">Consulte suas notas, sem Filas, com privacidade e muitos outros beneficios</p>
                         </div>
-                        <form action="" method="">
+                        <form method="POST">
                             <div class="">
                                 <div>
                                     <label class="block mb-2 text-white" for="">Email</label>
-                                    <input class="w-full p-[0.7rem] rounded-md" type="text" placeholder="Nome Completo" name="nome">
+                                    <input class="w-full p-[0.7rem] rounded-md" type="email" placeholder="Email" name="email">
                                 </div>
                                 <div>
                                     <label class="block my-2 text-white" for="">Palavra Passe</label>
-                                    <input class="w-full p-[0.7rem] rounded-md" type="password" placeholder="Data de Nascimento" name="password">
+                                    <input class="w-full p-[0.7rem] rounded-md" type="password" placeholder="Palavra passe" name="palavra_passe">
                                 </div>
                             </div>
                             <p class="mt-4 text-center text-white">Ainda nao possui uma conta? <a class="text-red-400 inline-block" href="<?= BASE_URL?>cadastro">Crie Agora</a></p>

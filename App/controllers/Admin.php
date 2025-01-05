@@ -7,12 +7,6 @@ class Admin  extends Controller
 {
     public function index()
     {
-        $this->view('professor');
+        $this->view('dashboard');
     }
-
-    public function dashboard()
-    {
-        $this->view('adicionar_professor');
-    }
-
 }

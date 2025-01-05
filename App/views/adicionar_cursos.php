@@ -3,6 +3,7 @@
 <nav class="bg-blue-800 text-white p-4 block sm:hidden">
   <div class="flex items-center justify-between">
     <div class="flex items-center">
+        <ion-icon class="text-3xl" name="pie-chart"></ion-icon>
         <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">CONOTA</a></h1>
     </div>
     <button class="text-white focus:outline-none" onclick="toggleMenu()">
@@ -12,7 +13,6 @@
     </button>
   </div>
   <div class="mt-2 hidden" id="mobile-menu">
-  <div class="bg-blue-800 text-white w-64 h-screen">
   <ul class="space-y-2">
         <li class="hover:bg-blue-700">
             <a class="flex items-center px-4 py-2" href="#">
@@ -26,7 +26,7 @@
             <div class="flex items-center justify-between px-4 py-2 hover:bg-blue-700 cursor-pointer">
                 <div class="flex items-center">
                     <ion-icon name="people-outline" class="mr-2"></ion-icon>
-                    Students
+                    Estudantes
                 </div>
                 <ion-icon name="chevron-down-outline"></ion-icon>
             </div>
@@ -64,16 +64,16 @@
             <div class="flex items-center justify-between px-4 py-2 hover:bg-blue-700 cursor-pointer">
                 <div class="flex items-center">
                     <ion-icon name="wallet-outline" class="mr-2"></ion-icon>
-                    Conta
+                    Cursos
                 </div>
                 <ion-icon name="chevron-down-outline"></ion-icon>
             </div>
             <ul class="hidden group-hover:block bg-blue-900">
                 <li class="hover:bg-blue-700">
-                    <a class="block px-6 py-2" href="#">Perfil</a>
+                    <a class="block px-6 py-2" href="#">Todos os Cursos</a>
                 </li>
                 <li class="hover:bg-blue-700">
-                    <a class="block px-6 py-2" href="#">Definicoes</a>
+                    <a class="block px-6 py-2" href="#">Adicionar Cursos</a>
                 </li>
             </ul>
         </li>
@@ -94,18 +94,14 @@
             </a>
         </li>
     </ul>
-</div>
-
   </div>
 </nav>
 
 <div class="flex flex-col sm:flex-row">
-
   <div class="hidden sm:block w-full sm:w-1/4 bg-blue-800 text-white h-screen p-4">
      <div class="flex items-center mb-6">
         <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">CONOTA</a></h1>
     </div>
-    <div class="bg-blue-800 text-white w-64 h-screen">
     <ul class="space-y-2">
         <li class="hover:bg-blue-700">
             <a class="flex items-center px-4 py-2" href="#">
@@ -119,7 +115,7 @@
             <div class="flex items-center justify-between px-4 py-2 hover:bg-blue-700 cursor-pointer">
                 <div class="flex items-center">
                     <ion-icon name="people-outline" class="mr-2"></ion-icon>
-                    Students
+                    Estudantes
                 </div>
                 <ion-icon name="chevron-down-outline"></ion-icon>
             </div>
@@ -157,29 +153,38 @@
             <div class="flex items-center justify-between px-4 py-2 hover:bg-blue-700 cursor-pointer">
                 <div class="flex items-center">
                     <ion-icon name="wallet-outline" class="mr-2"></ion-icon>
-                    Conta
+                    Cursos
                 </div>
                 <ion-icon name="chevron-down-outline"></ion-icon>
             </div>
             <ul class="hidden group-hover:block bg-blue-900">
                 <li class="hover:bg-blue-700">
-                    <a class="block px-6 py-2" href="#">Perfil</a>
+                    <a class="block px-6 py-2" href="#">Todos os Cursos</a>
                 </li>
                 <li class="hover:bg-blue-700">
-                    <a class="block px-6 py-2" href="#">Definicoes</a>
+                    <a class="block px-6 py-2" href="#">Adicionar Cursos</a>
                 </li>
             </ul>
         </li>
 
-       
-        <li class="hover:bg-blue-700">
-            <a class="flex items-center px-4 py-2" href="#">
-                <ion-icon name="book-outline" class="mr-2"></ion-icon>
-                Disciplina
-            </a>
+        <li class="group">
+            <div class="flex items-center justify-between px-4 py-2 hover:bg-blue-700 cursor-pointer">
+                <div class="flex items-center">
+                    <ion-icon name="wallet-outline" class="mr-2"></ion-icon>
+                    Disciplina
+                </div>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+            </div>
+            <ul class="hidden group-hover:block bg-blue-900">
+                <li class="hover:bg-blue-700">
+                    <a class="block px-6 py-2" href="#">Todas as Disciplinas</a>
+                </li>
+                <li class="hover:bg-blue-700">
+                    <a class="block px-6 py-2" href="#">Adicionar Disciplinas</a>
+                </li>
+            </ul>
         </li>
 
-        
         <li class="hover:bg-blue-700">
             <a class="flex items-center px-4 py-2" href="#">
                 <ion-icon name="settings-outline" class="mr-2"></ion-icon>
@@ -187,67 +192,40 @@
             </a>
         </li>
     </ul>
-</div>
-
   </div>
 
   <div class="w-full sm:w-3/4 p-6">
     <div class="p-6 mb-6">
-      <h4 class="text-xl font-semibold mb-2">Welcome Celestino-Admin</h4>
+      <h4 class="text-xl font-semibold mb-2">Welcome Celestino</h4>
     </div>
-
-        <div class="bg-white shadow-lg rounded-lg">
-                    <div class="w-full p-4  mx-auto">
-                        <form action="" method="POST">
-                            <h1 class="text-2xl font-bold">Adicionar Estudante</h1>
-                            <div class="">
-                                <div class="sm:flex items-center mb-4">
-                                    <div class="sm:flex-1">
-                                        <label class="" for="">Nome Completo</label>
-                                        <input class="w-full p-[0.7rem] rounded-md border-2 border-gray-200" type="text" placeholder="Nome Completo" name="nome_usuario">
-                                    </div>
-                                    <div class="sm:flex-1">
-                                        <label class="" for="">Data de Nascimeto</label>
-                                        <input class="w-full p-[0.7rem] rounded-md  border-2 border-gray-200" type="date" placeholder="Data de Nascimento" name="data_nascimento">
-                                    </div>
-                                </div>
-                                <div class="sm:flex items-center mb-4">
-                                    <div class="sm:flex-1 sm:mt-0">
-                                        <select name="tipo_usuario" id="" class="w-full p-[0.7rem] border-2 border-gray-200 rounded-md">
-                                            <option value="professor">Professor</option>
-                                        </select>
-                                    </div>
-                                    <div class="md:flex-1">
-                                        <label class="" for=""></label>
-                                        <input class="w-full p-[0.7rem] border-2 border-gray-200 rounded-md" type="email" placeholder="eamil" name="email">
-                                    </div>
-                                </div>
-                                <div class="sm:flex items-center">
-                                    <div class="sm:flex-1">
-                                        <select name="" id="" class="w-full p-[0.7rem] border-2 border-gray-200 rounded-md">
-                                            <option value="">Seleciona o curso</option>
-                                            <option value=""></option>
-                                            <option value=""></option>
-                                        </select>
-                                    </div>
-                                    <div class="sm:flex-1">
-                                        <label class="" for="">Palavra Passe</label>
-                                        <input class="w-full p-[0.7rem] rounded-md  border-2 border-gray-200" type="password" placeholder="password" name="palavra_passe">
-                                    </div>
-                                    <div class="sm:flex-1">
-                                        <label class="" for="">Matricula</label>
-                                        <input class="w-full p-[0.7rem] rounded-md  border-2 border-gray-200" type="text" placeholder="matricula" name="matricula">
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <div class="text-right"><button type="submit" class="bg-blue-800 p-[0.7rem] text-white font-medium rounded-md mt-4">Cadastrar-se</button></div>
-                        </form>
-                    </div>
+    <div class="bg-white shadow-lg rounded-lg">
+        <div class="container mx-auto p-4">
+          <div class="overflow-x-auto">
+            <form  method="POST">
+                <div class="">
+                    <label class="block mb-4 font-bold" for="">Nome do curso</label>
+                    <input class="p-[0.7rem] border-2 border-gray-300 w-full" type="text" name="nome_curso" placeholder="Nome do curso">
+                </div>
+                <div>
+                    <label class="block my-4 font-bold" for="descricao">Descricao</label>
+                    <textarea class="w-full border-2 border-gray-300" name="descricao" id="descricao"></textarea>
+                </div>
+                <div>
+                   <select class="w-full border-2 border-gray-300 p-[0.7rem]" name="id_coordenador">
+                    <option value="">Selciona o coordenador do curso</option>
+                    <option value="1">Daniel Francisco</option>
+                   </select>
+                </div>
+                <button type="submit" class="bg-blue-800 text-orange-400 py-2 px-4 font-bold">Adicionar curso</button>
+            </form>
+          </div>
         </div>
+    </div>
   </div>
 </div>
+
 <script>
+
   function toggleMenu() {
     const menu = document.getElementById('mobile-menu');
     menu.classList.toggle('hidden');

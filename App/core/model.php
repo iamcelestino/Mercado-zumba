@@ -19,10 +19,10 @@ class Model extends Database
         } 
     }
 
-    public function where($column, $value, string $order = "ASC"): array|object
+    public function where($column, $value): array|object|bool
     {   
         $column = addslashes($column);
-        $query = "SELECT * FROM " . $this->table . " WHERE " . $column . " = : value" . "ORDER BY" . $order;
+        $query = "SELECT * FROM " . $this->table . " WHERE " . $column . " = :value";
         $data = $this->query($query, [
            'value' => $value 
         ]);

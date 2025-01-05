@@ -3,6 +3,7 @@
 <nav class="bg-blue-800 text-white p-4 block sm:hidden">
   <div class="flex items-center justify-between">
     <div class="flex items-center">
+        <ion-icon class="text-3xl" name="pie-chart"></ion-icon>
         <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">CONOTA</a></h1>
     </div>
     <button class="text-white focus:outline-none" onclick="toggleMenu()">
@@ -12,12 +13,20 @@
     </button>
   </div>
   <div class="mt-2 hidden" id="mobile-menu">
-    <ul class="space-y-2">
-    <li class="group">
+  <ul class="space-y-2">
+        <li class="hover:bg-blue-700">
+            <a class="flex items-center px-4 py-2" href="#">
+                <ion-icon name="home-outline" class="mr-2"></ion-icon>
+                Dashboard
+            </a>
+        </li>
+
+        
+        <li class="group">
             <div class="flex items-center justify-between px-4 py-2 hover:bg-blue-700 cursor-pointer">
                 <div class="flex items-center">
                     <ion-icon name="people-outline" class="mr-2"></ion-icon>
-                    Students
+                    Estudantes
                 </div>
                 <ion-icon name="chevron-down-outline"></ion-icon>
             </div>
@@ -50,20 +59,21 @@
             </ul>
         </li>
 
+    
         <li class="group">
             <div class="flex items-center justify-between px-4 py-2 hover:bg-blue-700 cursor-pointer">
                 <div class="flex items-center">
                     <ion-icon name="wallet-outline" class="mr-2"></ion-icon>
-                    Conta
+                    Cursos
                 </div>
                 <ion-icon name="chevron-down-outline"></ion-icon>
             </div>
             <ul class="hidden group-hover:block bg-blue-900">
                 <li class="hover:bg-blue-700">
-                    <a class="block px-6 py-2" href="#">Perfil</a>
+                    <a class="block px-6 py-2" href="#">Todos os Cursos</a>
                 </li>
                 <li class="hover:bg-blue-700">
-                    <a class="block px-6 py-2" href="#">Definicoes</a>
+                    <a class="block px-6 py-2" href="#">Adicionar Cursos</a>
                 </li>
             </ul>
         </li>
@@ -88,17 +98,24 @@
 </nav>
 
 <div class="flex flex-col sm:flex-row">
-
   <div class="hidden sm:block w-full sm:w-1/4 bg-blue-800 text-white h-screen p-4">
      <div class="flex items-center mb-6">
         <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">CONOTA</a></h1>
     </div>
-    <ul class="space-y-4">
-          <li class="group">
+    <ul class="space-y-2">
+        <li class="hover:bg-blue-700">
+            <a class="flex items-center px-4 py-2" href="#">
+                <ion-icon name="home-outline" class="mr-2"></ion-icon>
+                Dashboard
+            </a>
+        </li>
+
+        
+        <li class="group">
             <div class="flex items-center justify-between px-4 py-2 hover:bg-blue-700 cursor-pointer">
                 <div class="flex items-center">
                     <ion-icon name="people-outline" class="mr-2"></ion-icon>
-                    Students
+                    Estudantes
                 </div>
                 <ion-icon name="chevron-down-outline"></ion-icon>
             </div>
@@ -136,29 +153,38 @@
             <div class="flex items-center justify-between px-4 py-2 hover:bg-blue-700 cursor-pointer">
                 <div class="flex items-center">
                     <ion-icon name="wallet-outline" class="mr-2"></ion-icon>
-                    Conta
+                    Cursos
                 </div>
                 <ion-icon name="chevron-down-outline"></ion-icon>
             </div>
             <ul class="hidden group-hover:block bg-blue-900">
                 <li class="hover:bg-blue-700">
-                    <a class="block px-6 py-2" href="#">Perfil</a>
+                    <a class="block px-6 py-2" href="#">Todos os Cursos</a>
                 </li>
                 <li class="hover:bg-blue-700">
-                    <a class="block px-6 py-2" href="#">Definicoes</a>
+                    <a class="block px-6 py-2" href="#">Adicionar Cursos</a>
                 </li>
             </ul>
         </li>
 
-       
-        <li class="hover:bg-blue-700">
-            <a class="flex items-center px-4 py-2" href="#">
-                <ion-icon name="book-outline" class="mr-2"></ion-icon>
-                Disciplina
-            </a>
+        <li class="group">
+            <div class="flex items-center justify-between px-4 py-2 hover:bg-blue-700 cursor-pointer">
+                <div class="flex items-center">
+                    <ion-icon name="wallet-outline" class="mr-2"></ion-icon>
+                    Disciplina
+                </div>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+            </div>
+            <ul class="hidden group-hover:block bg-blue-900">
+                <li class="hover:bg-blue-700">
+                    <a class="block px-6 py-2" href="#">Todas as Disciplinas</a>
+                </li>
+                <li class="hover:bg-blue-700">
+                    <a class="block px-6 py-2" href="#">Adicionar Disciplinas</a>
+                </li>
+            </ul>
         </li>
 
-        
         <li class="hover:bg-blue-700">
             <a class="flex items-center px-4 py-2" href="#">
                 <ion-icon name="settings-outline" class="mr-2"></ion-icon>
@@ -169,62 +195,21 @@
   </div>
 
   <div class="w-full sm:w-3/4 p-6">
-    <div class="flex justify-between">
+    <div class="p-6 mb-6">
       <h4 class="text-xl font-semibold mb-2">Welcome Celestino</h4>
-      <p>Profile</p>
     </div>
-    <div class=" ">
-
-
-  <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
-
-    <div class="relative">
-      <img src="<?=ASSETS_URL?>/images/244835289_133254449042198_8478864432922741442_n.jpg" alt="Banner" class="rounded-lg object-cover h-40 w-full">
-
-      <div class="absolute top-20 left-1/2 transform -translate-x-1/2">
-        <img src="<?=ASSETS_URL ?>/images/Ellipse 14.png" alt="Profile" class="rounded-full border-4 border-white w-40 h-40">
-      </div>
+    <div class="bg-white shadow-lg rounded-lg">
+        <div class="container mx-auto p-4">
+          <div class="overflow-x-auto">
+        
+          </div>
+        </div>
     </div>
-
-    <div class="text-center mt-24">
-      <h2 class="text-2xl font-semibold">Celestino Trosso-Aluno</h2>
-    </div>
-
-    <form class="mt-8 space-y-4" method="POST">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <label for="school-name" class="block text-gray-600 font-medium">Curso</label>
-          <input type="text" id="school-name" class="w-full mt-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Firm Foundation School - Accra" />
-        </div>
-        <div>
-          <label for="email" class="block text-gray-600 font-medium">Email *</label>
-          <input type="email" id="email" class="w-full mt-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="arabagrant@gmail.com" />
-        </div>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <label for="mobile" class="block text-gray-600 font-medium">Mobile No</label>
-          <input type="text" id="mobile" class="w-full mt-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="0264622310" />
-        </div>
-        <div>
-          <label for="city" class="block text-gray-600 font-medium">Endereco</label>
-          <input type="text" id="city" class="w-full mt-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Accra" />
-        </div>
-      </div>
-
-      <div class="text-center mt-4 sm:flex items-center justify-center">
-      <input type="text" id="" class="w-full mt-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="pesquisar" />
-        <button type="submit" class="bg-blue-900  text-white px-6 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 font-bold">
-          pesquisar
-        </button>
-      </div>
-    </form>
-  </div>
-
   </div>
 </div>
 
 <script>
+
   function toggleMenu() {
     const menu = document.getElementById('mobile-menu');
     menu.classList.toggle('hidden');

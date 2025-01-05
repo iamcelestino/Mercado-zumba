@@ -9,10 +9,4 @@ class Professor  extends Controller
     {
         $this->view('professor');
     }
-
-    public function criar()
-    {
-        $this->view('adicionar_professor');
-    }
-
 }

@@ -13,18 +13,17 @@ class Cadastro extends Controller
         $this->usuario = new Usuario();
     }
 
-    public function professor()
+    public function professor(): void
     {   
         $this->cadastrar($_POST, $this->usuario);
-        $this->view('adicionar_professor');
+        $this->view('cadastro');
     }
 
-    public function estudante()
+    public function estudante(): void
     {   
-       
-        $this->view('adicionar_estudante');
+        $this->cadastrar($_POST, $this->usuario);
+        $this->view('estudante');
     }
-
     
     public function cadastrar(array $dados_usuario, Usuario $usuario): void
     {
@@ -33,10 +32,11 @@ class Cadastro extends Controller
             $usuario = new $usuario();
     
             if($usuario->validar($dados_usuario)) {
-                $usuario->insert($dados_usuario);
+
+                $usuario->insert($dados_usuario);  
             } 
             else {
-                die;
+                echo "this user is invalid";
             }
         }
     }
