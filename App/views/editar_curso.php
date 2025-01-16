@@ -201,33 +201,23 @@
     <div class="bg-white shadow-lg rounded-lg">
         <div class="container mx-auto p-4">
           <div class="overflow-x-auto">
-                <table class="min-w-full divide-y divide-gray-200">
-                    <thead class="bg-gray-200">
-                        <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nome Curso</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Descricao</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Coordenador do curso</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">acoes</th>
-                        </tr>
-                    </thead>
-                    <?php if($cursos): ?>
-                        <?php foreach($cursos as $curso): ?>
-                    <tbody class="bg-white divide-y divide-gray-200">
-                            <tr>
-                                <td class="px-6 py-4 whitespace-nowrap"><?= escape($curso->nome_curso)?></td>
-                                <td class="px-6 py-4 whitespace-nowrap"><?= escape($curso->descricao)?></td>
-                                <td class="px-6 py-4 whitespace-nowrap"><?= $curso->id_coordenador?></td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                   <a href="<?=BASE_URL?>curso/deletar/<?= $curso->id_curso ?>"><ion-icon class="text-xl" name="trash-bin-outline"></ion-icon></a>
-                                   <a href="<?=BASE_URL?>curso/editar/<?= $curso->id_curso ?>"><ion-icon class="text-xl" name="create"></ion-icon></a>
-                                </td>
-                            </tr>
-                    </tbody>
-                        <?php endforeach ?>
-                    <?php else: ?>
-                        <h1>Ainda Nao Ha cursos <a href="">Adicionar cursos</a></h1>
-                    <?php endif ?>
-                </table>
+            <form  method="POST">
+                <div class="">
+                    <label class="block mb-4 font-bold" for="">Nome do curso</label>
+                    <input value="<?=buscar_var('nome_curso', $curso->nome_curso)?>" class="p-[0.7rem] border-2 border-gray-300 w-full" type="text" name="nome_curso" placeholder="Nome do curso">
+                </div>
+                <div>
+                    <label class="block my-4 font-bold" for="descricao">Descricao</label>
+                    <textarea class="w-full border-2 border-gray-300" name="descricao" id="descricao"><?=buscar_var('descricao', $curso->descricao)?></textarea>
+                </div>
+                <div>
+                   <select class="w-full border-2 border-gray-300 p-[0.7rem]" name="id_coordenador">
+                    <option value="">Selciona o coordenador do curso</option>
+                    <option value="1">Daniel Francisco</option>
+                   </select>
+                </div>
+                <button type="submit" class="bg-blue-800 text-orange-400 py-2 px-4 font-bold">Editar Curso</button>
+            </form>
           </div>
         </div>
     </div>

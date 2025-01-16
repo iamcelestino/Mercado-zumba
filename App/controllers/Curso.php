@@ -15,7 +15,12 @@ class Curso extends Controller
 
     public function index(): void
     {
-        $this->view('cursos');
+        $curso = $this->load_model('Curso');
+        $dados_curso = $curso->findAll();
+
+        $this->view('cursos', [
+            'cursos' => $dados_curso
+        ]);
     }
 
     public function adicionar(): void
@@ -31,14 +36,52 @@ class Curso extends Controller
         $this->view('adicionar_cursos');
     }
 
-    public function editar(): void
+    public function editar(int $id = null): void
     {
+        $dado_curso = $this->curso->where('id_curso', $id);
+        
+        if(!$dado_curso) {
+            $this->redirect('curso');
+        }
 
+        if(count($_POST) > 0) {
+
+            if($this->curso->validar($_POST)) {
+                $this->curso->update($id, $_POST);
+                $this->redirect('curso');
+            } else {
+                echo "nao pude actualizar";
+            }
+        }
+
+        $this->view('editar_curso', [
+            'curso' => $dado_curso[0]
+        ]);
     }
 
-    public function deletar(): void
-    {
+    public function deletar(int $id = null): void
+    {   
+        $dado_curso = $this->curso->where('id_curso', $id);
+        
+        if(!$dado_curso) {
+            $this->redirect('curso');
+        }
 
+        if(count($_POST) > 0) {
+            
+            if($this->curso->validar($_POST)) {
+
+                $this->curso->delete($id, $_POST);
+                $this->redirect('curso');
+                
+            } else {
+                echo "nao pude actualizar";
+            }
+        }
+
+        $this->view('apagar_curso', [
+            'curso' => $dado_curso[0]
+        ]);
     }
 
 }

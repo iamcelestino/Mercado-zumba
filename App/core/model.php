@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Core;
 use App\Core\Database;
+use Exception;
 
 class Model extends Database
 {
@@ -53,9 +54,9 @@ class Model extends Database
        return $data;
     }
 
-    public function findAll(string $order = 'ASC'): array|object 
+    public function findAll(): array|object 
     {
-        $query = " SELECT * FROM ". $this->table . " ORDER BY " . $order;
+        $query = " SELECT * FROM ". $this->table;
         $data = $this->query($query);
 
         if(is_array($data)) {
@@ -122,20 +123,40 @@ class Model extends Database
 
         $string = '';
         foreach($data as $key => $value) {
-            $string .= "$key = : $key, ";
+            $string .= "$key = :$key, ";
         }
 
         $strg = rtrim($string, ", ");
-        $data['id'] = $id;
+        $primary_key = $this->get_primary_key();
+        $data[$primary_key] = $id;
 
-        $query = "UPDATE $this->table SET $strg WHERE id = :id";
+        $query = "UPDATE $this->table SET $strg WHERE $primary_key = :$primary_key";
         return $this->query($query, $data);
+    }
+
+    public function get_primary_key(): string
+    {
+        static $primary_keys = [];
+
+        if(!isset($primary_keys[$this->table])) {
+            $query = "SHOW KEYS FROM {$this->table} WHERE Key_name = 'PRIMARY'";
+            $result = $this->query($query, [], 'array');
+
+            if(!empty($result)) {
+                $primary_keys[$this->table] = $result[0]['Column_name'];
+            } else {
+                throw new Exception("primary Key not Found for table {$this->table}");
+            }
+        }
+        return $primary_keys[$this->table];
     }
 
     public function delete(mixed $id) 
     {
-        $query = "SELECT FROM $this->table WHERE id = :id";
-        $data['id'] = $id;
+        $primary_key = $this->get_primary_key(); 
+
+        $query = "DELETE FROM $this->table WHERE $primary_key = :$primary_key";
+        $data[$primary_key] = $id;
         return $this->query($query, $data);
     }
 }
