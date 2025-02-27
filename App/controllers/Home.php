@@ -5,8 +5,8 @@ use App\Core\Controller;
 
 class home extends Controller 
 {
-    public function index() 
+    public function index(): void
     {
-        $this->view('adicionar_cursos');
+        $this->view('home');
     }
 }

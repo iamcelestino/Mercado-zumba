@@ -9,26 +9,18 @@
                             <div class="">
                                 <div>
                                     <label class="block mb-2" for="">Nome Completo</label>
-                                    <input class="w-full p-[0.7rem] rounded-md" type="text" placeholder="Nome Completo" name="nome">
+                                    <input class="w-full p-[0.7rem] rounded-md" type="text" placeholder="nome" name="nome">
                                 </div>
                                 <div>
                                     <label class="block my-2" for="">Contacto</label>
                                     <input class="w-full p-[0.7rem] rounded-md" type="text" placeholder="contacto" name="contacto">
                                 </div>
-                                <div class="mt-4">
-                                    <select name="funcao" id="funcao" class="w-full p-[0.7rem] rounded-md">
-                                        <option value="">Escola a sua funcão</option>
-                                        <option value="admin">admin</option>
-                                        <option value="caixa">caixa</option>
-                                        <option value="gerente">gerente</option>
-                                    </select>
-                                </div>
                                 <div>
-                                    <label class="block my-2" for="">Plavra-passe</label>
-                                    <input class="w-full p-[0.7rem] rounded-md" type="password" placeholder="palavra_passe" name="palavra_passe">
+                                    <label class="block my-2" for="">Endereco</label>
+                                    <input class="w-full p-[0.7rem] rounded-md" type="text" placeholder="endereco" name="endereco">
                                 </div>
                             </div>                           
-                            <button type="submit" class="bg-[#AD1FEA] p-[0.7rem] w-full text-white font-medium rounded-md mt-4">Cadastrar-se</button>
+                            <button type="submit" class="bg-[#AD1FEA] p-[0.7rem] w-full text-white font-medium rounded-md mt-4">Cadastrar</button>
                         </form>
                     </div>
                 </div>
