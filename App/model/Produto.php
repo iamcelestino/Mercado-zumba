@@ -12,6 +12,7 @@ class Produto extends Model
         'categoria',
         'preco_unitario',
         'id_fornecedor',
+        'imagem',
         'quantidade_estoque'
     ];
 

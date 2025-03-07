@@ -16,17 +16,41 @@ class Produto extends Controller
     }
     public function index(): void
     {
-        $this->view('produtos');
+        $produto = $this->load_model('produto');
+        $dados_produto = $produto->findAll();
+
+        $this->view('produtos', [
+            'produtos' => $dados_produto
+        ]);
+    }
+
+    public function detalhes(int $id = null)
+    {
+        $produto  = $this->load_model('produto');
+        $dados_produto = $produto->where('id_produto', $id);
+
+        $this->view('detalhes_produto', [
+            'produto' => $dados_produto[0]
+        ]);
+
     }
 
     public function adicionar(): void
     {
+
         $fornecedores = $this->load_model('fornecedor');
         $dados_fornecedores = $fornecedores->findAll();
 
         if(count($_POST) > 0) {
+
+            if(count($_FILES) > 0) {
+                
+                $imagem = carregar_ficheiro($_FILES);
+
+                $_POST['imagem'] = $imagem['imagem'] ?? null;
+            }
             $this->produto->insert($_POST);
-            $this->redirect('produtos');
+            $this->redirect('produto');
         }
 
         $this->view('adicionar_produto', [

@@ -18,10 +18,15 @@ class Login extends Controller
 
         if(count($_POST) > 0) {
 
-            if($dados_usuario = $this->usuario->where('email', $_POST['email']) ){
+            if($dados_usuario = $this->usuario->where('nome', $_POST['nome']) ){
                 
                     $dados_usuario = $dados_usuario[0];
 
+                    if(password_verify($_POST['palavra_passe'], $dados_usuario->palavra_passe)) {
+
+                        Autenticacao::autenticar($dados_usuario);
+                        $this->redirect('home');
+                    }
             }
     }
 

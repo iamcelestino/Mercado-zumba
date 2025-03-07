@@ -30,12 +30,12 @@
                                         </a>
                                     </div>
                                     <div class="hidden group-hover:block absolute bg-gray-100 min-w-[100px] shadow-lg z-10">
-                                        <a class="float-none text-black px-4 py-3 no-underline block text-left"  href="<?= BASE_URL ?>perfil/">Perfil</a>
+                                        <a class="float-none text-black px-4 py-3 no-underline block text-left"  href="<?= BASE_URL ?>perfil">Perfil</a>
                                         <a class="float-none text-black px-4 py-3 no-underline block text-left"  href="<?= BASE_URL ?>logout">Logout</a>
                                     </div>
                                 </li>
                                 <li class="ml-4"><a href="">Home</a></li>
-                                <li class="ml-4 bg-[#AD1FEA] font-bold text-white px-4 py-2"><a href="">login</a></li>
+                                <li class="ml-4 bg-[#AD1FEA] font-bold text-white px-4 py-2"><a href="<?=BASE_URL?>login">login</a></li>
                             </ul>
                        </div>
                     </ul>

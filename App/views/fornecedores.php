@@ -10,15 +10,21 @@
                     <button>Pesquisar</button>
                 </div>
             </div>
-            <div>
+            <div class="sm:grid grid-cols-4">
+                <?php if($fornecedores): ?>
+                <?php foreach($fornecedores as $fornecedor): ?>
                 <div class="">
                     <img src="" alt="">
                     <div>
-                        <p class="">Nome <span>Celestino Trosso</span></p>
-                        <p class="">Contacto <span>943047242</span></p>
-                        <p class="">Endereco <span>Benguela</span></p>
+                        <p class=""><span class="font-bold">Nome: </span> <?= escape($fornecedor->nome)?></p>
+                        <p class=""><span class="font-bold">Contacto: </span> <?= escape($fornecedor->contacto)?></p>
+                        <p class=""><span class="font-bold">Endereco: </span> <?= escape($fornecedor->endereco)?></p>
                     </div>
                 </div>
+                <?php endforeach ?>
+                <?php else: ?>
+                    <h1>NAO HA FORNECEDORES DISPONIVEIS POR ENQUANTO</h1>
+                <?php endif?>
             
             </div>
         </div>

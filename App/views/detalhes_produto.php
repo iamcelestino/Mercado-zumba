@@ -4,15 +4,10 @@
     <section>
         <div class="container py-16">
             <div class="mb-4 sm:flex itens-center justify-between">
-                <h1 class="text-2xl font-bold">Encontre os Fornecedores Aqui</h1>
-                <div class="">
-                    <input type="text">
-                    <button>Pesquisar</button>
-                </div>
+                <h1 class="text-2xl font-bold"></h1>
             </div>
-            <?php if($produtos): ?>
+            <?php if($produto): ?>
             <div>
-                <?php foreach($produtos as $produto): ?>
                 <div class="">
                     <img src="" alt="">
                     <div>
@@ -20,12 +15,11 @@
                         <p class="">Categoria <span><?=escape($produto->categoria)?></span></p>
                         <p class="">Preco<span><?= escape($produto->preco_unitario)?></span></p>
                     </div>
-                    <a class="bg-[#AD1FEA] p-[0.7rem] text-white font-medium rounded-md mt-4 inline-block" href="<?=BASE_URL?>produto/detalhes/<?=$produto->id_produto?>">Detalhes</a>
+                    <a class="bg-[#AD1FEA] p-[0.7rem] w-full text-white font-medium rounded-md mt-4" href="">Vender</a>
                 </div>
-                <?php endforeach ?>
             </div>
             <?php else: ?>
-                <h1>AINDA NAO HA PRODUTOS REGISTRADOS</h1>
+                <h1>SELECIONE UM PRODUTO</h1>
             <?php endif ?>
         </div>
     </section>

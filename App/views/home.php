@@ -8,10 +8,11 @@
           </div>
           <div class="md:grid grid-cols-3 gap-10">
 
+
             <div class=" p-8 rounded-md bg-[#3A4374]">
-              <ion-icon class="text-5xl text-[#AD1FEA]" name="person"></ion-icon>
-              <a href=""></a>
-              <h1 class="text-2xl font-bold text-white">Funcioarios</h1>
+                <ion-icon class="text-5xl text-[#AD1FEA]" name="person"></ion-icon>
+                <a href=""></a>
+                <h1 class="text-2xl font-bold text-white">Funcioarios</h1>
             </div>
 
             <div class="bg-[#3A4374] p-8 rounded-md">
@@ -33,9 +34,11 @@
             </div>
 
             <div class="bg-[#3A4374] p-8 rounded-md">
-              <ion-icon class="text-5xl text-[#AD1FEA]" name="clipboard"></ion-icon>
-              <a href=""></a>
-              <h1 class="text-2xl font-bold text-white">Facturas</h1>
+              <div>
+                <ion-icon class="text-5xl text-[#AD1FEA]" name="clipboard"></ion-icon>
+                <a href=""></a>
+                <h1 class="text-2xl font-bold text-white">Facturas</h1>
+              </div>
             </div>
             
           </div>

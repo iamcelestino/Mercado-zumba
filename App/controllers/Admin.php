@@ -9,4 +9,5 @@ class Admin  extends Controller
     {
         $this->view('dashboard');
     }
+    
 }

@@ -17,7 +17,12 @@ class Fornecedor extends Controller
 
     public function index(): void
     {
-        $this->view('fornecedores');
+        $fornecedor = $this->load_model('fornecedor');
+        $dados_fornecedores = $fornecedor->findAll();
+        
+        $this->view('fornecedores', [
+            'fornecedores' => $dados_fornecedores
+        ]);
     }
 
     public function adicionar(): void
@@ -32,7 +37,7 @@ class Fornecedor extends Controller
         $this->view('adicionar_fornecedor');
     }
 
-    public function editar(int $id = null): void
+    public function editar(int $id): void
     {
         $fornecedores = $this->load_model('fornecedor');
         $fornecedor  = $fornecedores->where('id_fornecedor', $id);
@@ -55,7 +60,7 @@ class Fornecedor extends Controller
         );
     }
 
-    public function deletar(int $id = null): void
+    public function deletar(int $id): void
     {
         $fornecedores = $this->load_model('fornecedor');
         $fornecedor  = $fornecedores->where('id_fornecedor', $id);
