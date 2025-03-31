@@ -3,16 +3,21 @@
 namespace App\Controllers;
 
 use App\Core\Controller;
-use App\Model\{Produto as modelo_Produto};
+use App\Model\{Autenticacao, Produto as modelo_Produto, Venda, Itemvenda};
+use Exception;
 
 
 class Produto extends Controller
 {
     public mixed $produto;
+    public mixed $venda;
+    public mixed $itemvenda;
 
     public function __construct()
     {
-        $this->produto = new modelo_Produto();
+        $this->produto  = new modelo_Produto();
+        $this->venda    = new Venda();
+        $this->itemvenda = new Itemvenda();
     }
     public function index(): void
     {
@@ -28,6 +33,53 @@ class Produto extends Controller
     {
         $produto  = $this->load_model('produto');
         $dados_produto = $produto->where('id_produto', $id);
+
+        if(count($_POST) > 0) {
+
+            try {
+        
+                $this->venda->beginTransaction();
+
+                $_POST['id_funcionario'] = Autenticacao::getId_funcionario() ?? null;
+
+                $this->venda->insert($_POST);
+
+                $id_venda = $this->venda->lastInsertedId();
+
+                if($id_venda) {
+                  dd($id_venda);
+                }
+
+                $_POST['id_venda'] = $id_venda ?? null;
+
+                $_POST["preco_total"] = $this->preco_total($_POST);
+
+                $quantidade_vendida = $_POST['quantidade'] ?? null;
+
+                if($dados_produto) {
+
+                    $produto = $dados_produto[0];
+
+                    $nova_quantidade = $produto->quantidade_estoque - $quantidade_vendida;
+
+                    if ($nova_quantidade < 0) {
+                        throw new Exception("Estoque insuficiente para o produto ID $id.");
+                    }
+
+                    $this->produto->update($id, ['quantidade_estoque' => $nova_quantidade]);
+
+                }
+
+                $this->itemvenda->insert($_POST);
+                $this->venda->commit();
+
+            } catch(Exception $e) {
+
+                $this->venda->rollBack();
+                echo $e->getMessage();
+
+            }
+        }
 
         $this->view('detalhes_produto', [
             'produto' => $dados_produto[0]
@@ -95,5 +147,10 @@ class Produto extends Controller
             'produto' => $dados_produto[0],
             'fornecedores' => $dados_fornecedores
         ]);
+    }
+
+    public function preco_total(array $dados): mixed
+    {
+        return $dados['quantidade'] * $dados['preco_unitario'];
     }
 }

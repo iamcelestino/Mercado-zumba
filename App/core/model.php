@@ -72,7 +72,7 @@ class Model extends Database
         return $data;
     }
 
-    public function insert(array $data): bool 
+    public function insert(array $data): string|false
     {
         if(property_exists($this , 'allowed_columns')) {
 
@@ -159,4 +159,25 @@ class Model extends Database
         $data[$primary_key] = $id;
         return $this->query($query, $data);
     }
+    
+    public function beginTransaction(): bool
+    {
+        return $this->connection()->beginTransaction();
+    }
+
+    public function commit(): bool
+    {
+        return $this->connection()->commit();
+    }
+
+    public function rollback(): bool
+    {
+        return $this->connection()->rollBack();
+    }
+
+    public function lastInsertedId(): string
+    {
+        return $this->connection()->lastInsertId();
+    }
+
 }

@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\model;
+namespace App\Model;
 use App\Core\Model;
 
 class Itemvenda extends Model
 {
+    
     public array $erros = [];
 
     protected array $allowed_columns = [
@@ -26,7 +27,7 @@ class Itemvenda extends Model
         }
 
         if(empty($dados['id_venda'])) {
-            $this->erros['id_venda'] = 'Id Venda Invalido';
+            $this->erros['id_venda'] = 'Id Venda Invalido';     
         }
 
         if(empty($dados['Preco_total'])) {
@@ -43,4 +44,5 @@ class Itemvenda extends Model
 
         return false;
     }
+
 }

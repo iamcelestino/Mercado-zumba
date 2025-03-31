@@ -1,6 +1,10 @@
 <?php
 namespace App\Model;
+
+use App\Core\Database;
 use App\Core\Model;
+use App\Model\Itemvenda;
+use Exception;
 
 class Venda extends Model
 {
@@ -39,4 +43,6 @@ class Venda extends Model
 
         return false;
     }
+
+    
 }

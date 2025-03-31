@@ -33,8 +33,9 @@ class Cadastro extends Controller
             $funcionarios = $funcionario->findAll();
 
             if($funcionarios) {
-
+                
                 $ultimo_inserido = array_slice($funcionarios, -1)[0];
+
                 $dados_usuario = [
                     'nome' => $_POST['nome'] ?? null,
                     'palavra_passe' => $_POST['palavra_passe'] ?? null,
