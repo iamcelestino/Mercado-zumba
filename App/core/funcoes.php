@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+use App\Model\Imagem;
 
 function dd(mixed $dados): void {
     echo "<pre>";
@@ -32,6 +33,24 @@ function escape(mixed $dado): mixed
 {
     return htmlspecialchars($dado);
 }
+
+
+function busca_imagem($image) 
+{
+    
+    if(!file_exists($image)) {
+
+        $image = ASSETS_URL.'images/undraw_pic_profile_re_7g2h.svg';
+    }
+    else {
+        $imageModel = new Imagem();
+        $image = BASE_URL . 'public/'. $imageModel->perfil_Thumb($image);
+    }
+
+    return $image;
+}
+
+
 
 function carregar_ficheiro(mixed $files): array
 {
@@ -88,7 +107,7 @@ function carregar_ficheiro(mixed $files): array
         $base = preg_replace('/[^\w-]/', "_", $base);
         $nome_ficheiro = $base . "." . $pathInfo['extension'];
 
-        $diretorio = "images/uploads/";
+        $diretorio = "uploads/";
         
         if(!is_dir($diretorio)) {
             mkdir($diretorio, 0755, true);
@@ -112,3 +131,5 @@ function carregar_ficheiro(mixed $files): array
     }
     return $ficheiro_carregado;
 }
+
+

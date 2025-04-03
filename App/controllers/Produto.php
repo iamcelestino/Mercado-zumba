@@ -6,7 +6,6 @@ use App\Core\Controller;
 use App\Model\{Autenticacao, Produto as modelo_Produto, Venda, Itemvenda};
 use Exception;
 
-
 class Produto extends Controller
 {
     public mixed $produto;
@@ -19,6 +18,7 @@ class Produto extends Controller
         $this->venda    = new Venda();
         $this->itemvenda = new Itemvenda();
     }
+
     public function index(): void
     {
         $produto = $this->load_model('produto');
@@ -89,7 +89,6 @@ class Produto extends Controller
 
     public function adicionar(): void
     {
-
         $fornecedores = $this->load_model('fornecedor');
         $dados_fornecedores = $fornecedores->findAll();
 
@@ -131,7 +130,6 @@ class Produto extends Controller
 
     public function deletar(int $id = null): void
     {
-
         $fornecedores = $this->load_model('fornecedor');
         $dados_fornecedores = $fornecedores->findAll();
 

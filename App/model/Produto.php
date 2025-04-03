@@ -16,6 +16,10 @@ class Produto extends Model
         'quantidade_estoque'
     ];
 
+    protected array $after_select = [
+        'busca_fornecedor'
+    ];
+
     protected array $before_insert = [];
 
     public function validar(array $dados)
@@ -41,5 +45,17 @@ class Produto extends Model
         }
         return false;
 
+    }
+
+    public function busca_fornecedor($dados): array
+    {
+        $fornecedor = new Fornecedor();
+
+        foreach($dados as $chave => $coluna) {
+            $resultado = $fornecedor->where('id_fornecedor', $coluna->id_fornecedor);
+            $dados[$chave]->fornecedor = is_array($resultado) ? $resultado[0] : false;
+        }
+
+        return $dados;
     }
 }

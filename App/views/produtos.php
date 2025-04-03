@@ -11,16 +11,19 @@
                 </div>
             </div>
             <?php if($produtos): ?>
-            <div>
+            <div class="sm:grid grid-cols-4">
                 <?php foreach($produtos as $produto): ?>
-                <div class="">
-                    <img src="" alt="">
-                    <div>
-                        <p class="">Nome <span><?=escape($produto->nome)?></span></p>
-                        <p class="">Categoria <span><?=escape($produto->categoria)?></span></p>
-                        <p class="">Preco<span><?= escape($produto->preco_unitario)?></span></p>
+                    <?php $imagem = busca_imagem($produto->imagem) ?>
+                <div class="bg-gray-300">
+                    <img src="<?=$imagem?>" alt="">
+                    <div class="p-4">
+                        <p class="">Nome: <span><?=escape($produto->nome)?></span></p>
+                        <p class="">Categoria: <span><?=escape($produto->categoria)?></span></p>
+                        <p class="">Preco: <span><?= escape($produto->preco_unitario)?></span></p>
+                        <p class="">Quantidade Estoque: <span><?= $produto->quantidade_estoque?></span></p>
+                        <a class="bg-[#AD1FEA] p-[0.7rem] text-white font-medium rounded-md mt-4 inline-block w-full text-center" href="<?=BASE_URL?>produto/detalhes/<?=$produto->id_produto?>">Detalhes</a>
                     </div>
-                    <a class="bg-[#AD1FEA] p-[0.7rem] text-white font-medium rounded-md mt-4 inline-block" href="<?=BASE_URL?>produto/detalhes/<?=$produto->id_produto?>">Detalhes</a>
+                  
                 </div>
                 <?php endforeach ?>
             </div>

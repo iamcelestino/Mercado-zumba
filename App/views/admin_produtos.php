@@ -15,7 +15,7 @@
   <div class="flex items-center justify-between">
     <div class="flex items-center">
         <ion-icon class="text-3xl" name="pie-chart"></ion-icon>
-        <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">CONOTA</a></h1>
+        <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">ZUMBA</a></h1>
     </div>
     <button class="text-white focus:outline-none" onclick="toggleMenu()">
       <span class="block w-6 h-0.5 bg-white mb-1"></span>
@@ -101,7 +101,7 @@
 <div class="flex flex-col sm:flex-row">
   <div class="hidden sm:block w-full sm:w-1/4 bg-[#AD1FEA] text-white h-screen p-4">
      <div class="flex items-center mb-6">
-        <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">CONOTA</a></h1>
+        <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">ZUMBA</a></h1>
     </div>
     <ul class="space-y-2">
         <li class="hover:bg-blue-700">
@@ -236,27 +236,35 @@
             <div class="sm:flex items-center justify-between mb-4">
               <h1 class="font-bold text-3xl"></h1>
             </div>
-            <table class="min-w-full bg-white ">
-              <thead>
-                <tr>
-                  <th class="px-4 py-2 border-b">Nome</th>
-                  <th class="px-4 py-2 border-b">Categoria</th>
-                  <th class="px-4 py-2 border-b">Preco Unitario</th>
-                  <th class="px-4 py-2 border-b">Estoque</th>
-                  <th class="px-4 py-2 border-b">Fornecedor</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="text-center">
-                  <td class="px-4 py-2 border-b">Celestino Trosso</td>
-                  <td class="px-4 py-2 border-b">trcelestino@gmail.com</td>
-                  <td class="px-4 py-2 border-b">Benguela, vila das acacias</td>
-                  <td class="px-4 py-2 border-b">Informatica</td>
-                  <td class="px-4 py-2 border-b">Aprovado</td>
-                </tr>
-              </tbody>
-            </table>
-                <h1></h1>
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-200">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Produto</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Fornecedor</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Preco Unitario</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantidade de estoque</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">acoes</th>
+                        </tr>
+                    </thead>
+                    <?php if($produtos):  ?>
+                        <?php foreach($produtos as $produto): ?>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap"><?=escape($produto->nome)  ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= escape($produto->fornecedor->nome)  ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= $produto->preco_unitario ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= $produto->quantidade_estoque ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"></td>
+                                <td class=" text-center text-2xl">
+                                    <a href=""></a>
+                                    <a href=""></a>
+                                </td>
+                            </tr>
+                    </tbody>
+                        <?php endforeach ?>
+                    <?php else: ?>
+                    <?php endif ?>
+                </table>
           </div>
         </div>
     </div>
