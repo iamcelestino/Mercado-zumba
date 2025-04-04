@@ -28,7 +28,12 @@ class Admin  extends Controller
 
     public function fornecedores(): void
     {
+        $fornecedores = $this->load_model('fornecedor');
+        $dados_fornecedores = $fornecedores->findAll();
 
+        $this->view('admin_fornecedor', [
+            'fornecedores' => $dados_fornecedores
+        ]);
     }
     
 }
