@@ -1,3 +1,7 @@
+<?php
+
+use App\Model\Autenticacao;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -178,16 +182,19 @@
   </div>
 
   <div class="w-full sm:w-3/4 p-6">
-    <div class="p-6 mb-6">
-      <h4 class="text-xl font-semibold mb-2">Welcome Celestino</h4>
+    <div class=" mb-6">
+        <div class="border-[#AD1FEA] border-2 p-2 rounded-md">
+            <h4 class="text-xl font-semibold mb-2">Welcome <span><?=Autenticacao::getNome()?></span></h4>
+        </div>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
       <div class="bg-white shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">
         <div class="bg-indigo-200 p-4 rounded-full">
-            <ion-icon class="text-4xl" name="person"></ion-icon>
+            <ion-icon class="text-4xl" name="apps"></ion-icon>
         </div>
         <div>
-            <h4 class="text-lg font-semibold">Produtos</h4>
+            <h1 class="text-4xl">0</h1>
+            <h4 class="text-lg font-semibold">Produtos forncedidos</h4>
             <p></p>
         </div>
       </div>
@@ -196,16 +203,8 @@
             <ion-icon class="text-4xl" name="person"></ion-icon>
         </div>
         <div>
+            <h1 class="text-4xl">0</h1>
             <h4 class="text-lg font-semibold">Fornecedores</h4>
-            <p></p>
-        </div>
-      </div>
-      <div class="bg-white shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">
-        <div class="bg-indigo-200 p-4 rounded-full">
-            <ion-icon class="text-4xl"  name="apps"></ion-icon>
-        </div>
-        <div>
-            <h4 class="text-lg font-semibold">Funcionarios</h4>
             <p></p>
         </div>
       </div>
@@ -215,7 +214,7 @@
         <div class="container mx-auto p-4">
           <div class="overflow-x-auto">
             <div class="sm:flex items-center justify-between">
-                <h1 class="font-bold text-xl">Funcionarios</h1>
+                <h1 class="font-bold text-xl">Fornecedores</h1>
                 <a href="<?BASE_URL?>fornecedor/adicionar" class="bg-[#AD1FEA] py-2 px-4 font-bold text-white rounded-md ">adicionar fornecedor</a>
             </div>
             <div class="sm:flex items-center justify-between mb-4">
@@ -226,6 +225,7 @@
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"> Nome</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Contacto</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Endereco</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nº de produtos fornecidos</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">acoes</th>
                         </tr>
                     </thead>
@@ -236,10 +236,14 @@
                                 <td class="px-6 py-4 whitespace-nowrap"><?=escape($fornecedor->nome)  ?></td>
                                 <td class="px-6 py-4 whitespace-nowrap"><?= escape($fornecedor->contacto)  ?></td>
                                 <td class="px-6 py-4 whitespace-nowrap"><?= $fornecedor->endereco ?></td>
-                                <td class="px-6 py-4 whitespace-nowrap"></td>
+                                <td class="px-6 py-4 whitespace-nowrap"> 
+                                <?= isset($numero_de_produtos[$fornecedor->id_fornecedor][0]['numero_de_produtos']) 
+                                        ? $numero_de_produtos[$fornecedor->id_fornecedor][0]['numero_de_produtos'] 
+                                        : 0 ?>
+                                </td>
                                 <td class=" text-center text-2xl">
-                                    <a href=""></a>
-                                    <a href=""></a>
+                                    <a href="">editar</a>
+                                    <a href="">eliminar</a>
                                 </td>
                             </tr>
                     </tbody>

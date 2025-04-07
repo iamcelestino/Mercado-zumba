@@ -35,4 +35,9 @@ class Fornecedor extends Model
         return false;
     }
 
+    public function numero_de_productos(mixed $id_fornecedor): array
+    {
+        return $this->query("SELECT count(id_fornecedor) as 'numero_de_produtos' FROM produto WHERE id_fornecedor = :id_fornecedor", ['id_fornecedor'=> $id_fornecedor], 'array');
+    }
+
 }

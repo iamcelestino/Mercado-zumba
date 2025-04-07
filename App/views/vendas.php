@@ -1,3 +1,7 @@
+<?php
+
+use App\Model\Autenticacao;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +19,7 @@
   <div class="flex items-center justify-between">
     <div class="flex items-center">
         <ion-icon class="text-3xl" name="pie-chart"></ion-icon>
-        <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">CONOTA</a></h1>
+        <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">ZUMBA</a></h1>
     </div>
     <button class="text-white focus:outline-none" onclick="toggleMenu()">
       <span class="block w-6 h-0.5 bg-white mb-1"></span>
@@ -43,15 +47,33 @@
             </div>
             <ul class="hidden group-hover:block bg-blue-900">
                 <li class="hover:bg-blue-700">
-                    <a class="block px-6 py-2" href="<?=BASE_URL?>fornecedor">Todos Fornecedores</a>
+                    <a class="block px-6 py-2" href="#">Todos Fornecedores</a>
                 </li>
                 <li class="hover:bg-blue-700">
-                    <a class="block px-6 py-2" href="<?=BASE_URL?>fornecedor/adicionar">Adicionar Fornecedores</a>
+                    <a class="block px-6 py-2" href="#">Adicionar Fornecedores</a>
                 </li>
             </ul>
         </li>
 
-
+    
+        <li class="group">
+            <div class="flex items-center justify-between px-4 py-2 hover:bg-blue-700 cursor-pointer">
+                <div class="flex items-center">
+                    <ion-icon name="school-outline" class="mr-2"></ion-icon>
+                    Funcionarios
+                </div>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+            </div>
+            <ul class="hidden group-hover:block bg-blue-900">
+                <li class="hover:bg-blue-700">
+                    <a class="block px-6 py-2" href="#">Todos Funcionarios</a>
+                </li>
+                <li class="hover:bg-blue-700">
+                    <a class="block px-6 py-2" href="#">adicionar Funcionarios</a>
+                </li>
+            </ul>
+        </li>
+        
         <li class="group">
             <div class="flex items-center justify-between px-4 py-2 hover:bg-blue-700 cursor-pointer">
                 <div class="flex items-center">
@@ -62,10 +84,10 @@
             </div>
             <ul class="hidden group-hover:block bg-blue-900">
                 <li class="hover:bg-blue-700">
-                    <a class="block px-6 py-2" href="<?=BASE_URL?>produto">Todos Produtos</a>
+                    <a class="block px-6 py-2" href="#">Todos Produtos</a>
                 </li>
                 <li class="hover:bg-blue-700">
-                    <a class="block px-6 py-2" href="<?=BASE_URL?>produto/adicionar">Adicionar Produtos</a>
+                    <a class="block px-6 py-2" href="#">Adicionar Produtos</a>
                 </li>
             </ul>
         </li>
@@ -83,7 +105,7 @@
 <div class="flex flex-col sm:flex-row">
   <div class="hidden sm:block w-full sm:w-1/4 bg-[#AD1FEA] text-white h-screen p-4">
      <div class="flex items-center mb-6">
-        <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">CONOTA</a></h1>
+        <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">ZUMBA</a></h1>
     </div>
     <ul class="space-y-2">
         <li class="hover:bg-blue-700">
@@ -104,14 +126,34 @@
             </div>
             <ul class="hidden group-hover:block bg-blue-900">
                 <li class="hover:bg-blue-700">
-                    <a class="block px-6 py-2" href="<?=BASE_URL?>forncedor">Todos os Fornecedores</a>
+                    <a class="block px-6 py-2" href="#">Todos os Fornecedores</a>
                 </li>
                 <li class="hover:bg-blue-700">
-                    <a class="block px-6 py-2" href="<?=BASE_URL?>forncedor/adicionar">Adicionar Fornecedores</a>
+                    <a class="block px-6 py-2" href="#">Adicionar Fornecedores</a>
                 </li>
             </ul>
         </li>
 
+    
+        <li class="group">
+            <div class="flex items-center justify-between px-4 py-2 hover:bg-blue-700 cursor-pointer">
+                <div class="flex items-center">
+                    <ion-icon name="school-outline" class="mr-2"></ion-icon>
+                    Funcionarios
+                </div>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+            </div>
+            <ul class="hidden group-hover:block bg-blue-900">
+                <li class="hover:bg-blue-700">
+                    <a class="block px-6 py-2" href="#">Todos Funcionarios</a>
+                </li>
+                <li class="hover:bg-blue-700">
+                    <a class="block px-6 py-2" href="#">Adicionar Funcionarios</a>
+                </li>
+            </ul>
+        </li>
+
+    
         <li class="group">
             <div class="flex items-center justify-between px-4 py-2 hover:bg-blue-700 cursor-pointer">
                 <div class="flex items-center">
@@ -140,16 +182,19 @@
   </div>
 
   <div class="w-full sm:w-3/4 p-6">
-    <div class="p-6 mb-6">
-      <h4 class="text-xl font-semibold mb-2">Welcome Celestino</h4>
+    <div class=" mb-6">
+        <div class="border-[#AD1FEA] border-2 p-2 rounded-md">
+            <h4 class="text-xl font-semibold mb-2">Welcome <span><?=Autenticacao::getNome()?></span></h4>
+        </div>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
       <div class="bg-white shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">
         <div class="bg-indigo-200 p-4 rounded-full">
-            <ion-icon class="text-4xl" name="person"></ion-icon>
+            <ion-icon class="text-4xl" name="apps"></ion-icon>
         </div>
         <div>
-            <h4 class="text-lg font-semibold">Produtos</h4>
+            <h1 class="text-4xl">0</h1>
+            <h4 class="text-lg font-semibold">Produtos forncedidos</h4>
             <p></p>
         </div>
       </div>
@@ -158,67 +203,50 @@
             <ion-icon class="text-4xl" name="person"></ion-icon>
         </div>
         <div>
+            <h1 class="text-4xl">0</h1>
             <h4 class="text-lg font-semibold">Fornecedores</h4>
             <p></p>
         </div>
       </div>
-      <div class="bg-white shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">
-        <div class="bg-indigo-200 p-4 rounded-full">
-            <ion-icon class="text-4xl"  name="apps"></ion-icon>
-        </div>
-        <div>
-            <h4 class="text-lg font-semibold">Funcionarios</h4>
-            <p></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="sm:grid grid-cols-2 gap-6">
-        <div class="bg-white shadow-lg rounded-lg p-8">
-            <h1 class="font-bold">Fornecedores</h1>
-            <div class="flex items-center justify-between border-b mt-4 py-2">
-                <h4 class="font-bold"></h4>
-                <p class="font-medium"></p>
-            </div>
-        </div>
-
-        <div class="shadow-lg rounded-lg p-8">
-            <h1 class="font-bold mb-2">Produtos Vendidos</h1>
-            <div class="">
-                <div class="loader">
-                    <p</p>
-                </div>
-            </div>
-        </div>
     </div>
 
     <div class="bg-white shadow-lg rounded-lg">
         <div class="container mx-auto p-4">
           <div class="overflow-x-auto">
-            <div class="sm:flex items-center justify-between mb-4">
-              <h1 class="font-bold text-3xl"></h1>
+            <div class="sm:flex items-center justify-between">
+                <h1 class="font-bold text-xl">Fornecedores</h1>
+                <a href="<?BASE_URL?>fornecedor/adicionar" class="bg-[#AD1FEA] py-2 px-4 font-bold text-white rounded-md ">adicionar fornecedor</a>
             </div>
-            <table class="min-w-full bg-white ">
-              <thead>
-                <tr>
-                  <th class="px-4 py-2 border-b">Nome</th>
-                  <th class="px-4 py-2 border-b">Categoria</th>
-                  <th class="px-4 py-2 border-b">Preco Unitario</th>
-                  <th class="px-4 py-2 border-b">Estoque</th>
-                  <th class="px-4 py-2 border-b">Fornecedor</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="text-center">
-                  <td class="px-4 py-2 border-b">Celestino Trosso</td>
-                  <td class="px-4 py-2 border-b">trcelestino@gmail.com</td>
-                  <td class="px-4 py-2 border-b">Benguela, vila das acacias</td>
-                  <td class="px-4 py-2 border-b">Informatica</td>
-                  <td class="px-4 py-2 border-b">Aprovado</td>
-                </tr>
-              </tbody>
-            </table>
-                <h1></h1>
+            <div class="sm:flex items-center justify-between mb-4">
+            </div>
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-200">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Numero de venda</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Produto</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantidade</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total de vendas</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">acoes</th>
+                        </tr>
+                    </thead>
+                    <?php if($vendas):  ?>
+                        <?php foreach($vendas as $venda): ?>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap"><?=$venda->id_item_venda?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= escape($venda->produto->nome)?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= $venda->quantidade ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= $venda->preco_total ?> </td>
+                                <td class=" text-center text-2xl">
+                                    <a href="">editar</a>
+                                    <a href="">eliminar</a>
+                                </td>
+                            </tr>
+                    </tbody>
+                        <?php endforeach ?>
+                    <?php else: ?>
+                    <?php endif ?>
+                </table>
           </div>
         </div>
     </div>

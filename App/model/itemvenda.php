@@ -7,7 +7,6 @@ use App\Core\Model;
 
 class Itemvenda extends Model
 {
-    
     public array $erros = [];
 
     protected array $allowed_columns = [
@@ -15,6 +14,11 @@ class Itemvenda extends Model
         'id_venda',
         'preco_total',
         'quantidade'
+    ];
+
+    protected array $after_select = [
+        'busca_produtos',
+        'busca_vendas'
     ];
 
     protected array $before_insert = [];
@@ -43,6 +47,27 @@ class Itemvenda extends Model
         }
 
         return false;
+    }
+
+    public function busca_produtos(array $dados): array
+    {
+        $produtos = new Produto();
+        foreach($dados as $chave => $coluna) {
+            $resultado = $produtos->where('id_produto', $coluna->id_produto);
+            $dados[$chave]->produto = is_array($resultado) ? $resultado[0] : false;
+        }
+        return $dados;
+    }
+
+    public function busca_vendas(array $dados): array
+    {
+        $vendas = new Venda();
+
+        foreach($dados as $chave => $coluna) {
+            $resultado = $vendas->where('id_venda', $coluna->id_venda);
+            $dados[$chave]->venda = is_array($resultado) ? $resultado[0] : false;
+        }
+        return $dados;
     }
 
 }

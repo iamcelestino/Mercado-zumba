@@ -67,7 +67,6 @@ class Produto extends Controller
                     }
 
                     $this->produto->update($id, ['quantidade_estoque' => $nova_quantidade]);
-
                 }
 
                 $this->itemvenda->insert($_POST);

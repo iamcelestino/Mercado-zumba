@@ -18,12 +18,13 @@
                                 <div>
                                     <label class="block my-2" for="">Fornecedor</label>
                                     <?php if($fornecedores): ?>
-                                        <?php foreach($fornecedores as $fornecedor): ?>
+                 
                                             <select name="id_fornecedor" id="" class="w-full p-[0.7rem] rounded-md">
                                                 <option value="">Seleciona o fornecedor do producto</option>
+                                                <?php foreach($fornecedores as $fornecedor): ?>
                                                 <option value="<?=$fornecedor->id_fornecedor?>"><?= escape($fornecedor->nome)?></option>
+                                                <?php endforeach ?>
                                             </select>
-                                        <?php endforeach ?>
                                     <?php else: ?>
                                         <select name="fornecedores" id="" class="w-full p-[0.7rem] rounded-md">
                                             <option value="">Seleciona o fornecedor do producto</option>

@@ -19,7 +19,7 @@ class Fornecedor extends Controller
     {
         $fornecedor = $this->load_model('fornecedor');
         $dados_fornecedores = $fornecedor->findAll();
-        
+
         $this->view('fornecedores', [
             'fornecedores' => $dados_fornecedores
         ]);
