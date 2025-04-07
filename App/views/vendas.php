@@ -194,7 +194,7 @@ use App\Model\Autenticacao;
         </div>
         <div>
             <h1 class="text-4xl">0</h1>
-            <h4 class="text-lg font-semibold">Produtos forncedidos</h4>
+            <h4 class="text-lg font-semibold">Produtos Vendidos</h4>
             <p></p>
         </div>
       </div>
@@ -204,7 +204,7 @@ use App\Model\Autenticacao;
         </div>
         <div>
             <h1 class="text-4xl">0</h1>
-            <h4 class="text-lg font-semibold">Fornecedores</h4>
+            <h4 class="text-lg font-semibold">Total de Vendas</h4>
             <p></p>
         </div>
       </div>
@@ -214,7 +214,7 @@ use App\Model\Autenticacao;
         <div class="container mx-auto p-4">
           <div class="overflow-x-auto">
             <div class="sm:flex items-center justify-between">
-                <h1 class="font-bold text-xl">Fornecedores</h1>
+                <h1 class="font-bold text-xl">Vendas</h1>
                 <a href="<?BASE_URL?>fornecedor/adicionar" class="bg-[#AD1FEA] py-2 px-4 font-bold text-white rounded-md ">adicionar fornecedor</a>
             </div>
             <div class="sm:flex items-center justify-between mb-4">
@@ -225,6 +225,7 @@ use App\Model\Autenticacao;
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Numero de venda</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Produto</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantidade</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">data de venda</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total de vendas</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">acoes</th>
                         </tr>
@@ -234,8 +235,9 @@ use App\Model\Autenticacao;
                     <tbody class="bg-white divide-y divide-gray-200">
                             <tr>
                                 <td class="px-6 py-4 whitespace-nowrap"><?=$venda->id_item_venda?></td>
-                                <td class="px-6 py-4 whitespace-nowrap"><?= escape($venda->produto->nome)?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?=$venda->produto->nome?></td>
                                 <td class="px-6 py-4 whitespace-nowrap"><?= $venda->quantidade ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= $venda->venda->data_venda ?></td>
                                 <td class="px-6 py-4 whitespace-nowrap"><?= $venda->preco_total ?> </td>
                                 <td class=" text-center text-2xl">
                                     <a href="">editar</a>

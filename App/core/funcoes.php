@@ -51,7 +51,6 @@ function busca_imagem($image)
 }
 
 
-
 function carregar_ficheiro(mixed $files): array
 {
     $ficheiro_carregado = [];
