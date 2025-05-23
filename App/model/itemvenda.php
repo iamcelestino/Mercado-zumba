@@ -70,6 +70,19 @@ class Itemvenda extends Model
         return $dados;
     }
 
+    public function produto_vendido(int $id_venda): array
+    {
+        return $this->query(
+            "
+            SELECT a.*, b.*
+            from itemvenda as a 
+            inner JOIN produto as b on a.id_produto = b.id_produto
+            WHERE a.id_item_venda = :id_venda
+            ",
+            ['id_venda'=> $id_venda]
+        );
+    }
+
     public function produtos_vendidos(): array
     {
         return $this->query(

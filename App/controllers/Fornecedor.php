@@ -4,7 +4,6 @@ namespace App\Controllers;
 use App\Core\Controller;
 use App\Model\Fornecedor as modelo;
 
-
 class Fornecedor extends Controller 
 {
     public mixed $fornecedor;

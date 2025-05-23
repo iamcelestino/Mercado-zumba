@@ -8,7 +8,6 @@
           </div>
           <div class="md:grid grid-cols-3 gap-10">
 
-
             <div class=" p-8 rounded-md bg-[#3A4374]">
                 <ion-icon class="text-5xl text-[#AD1FEA]" name="person"></ion-icon>
                 <a href=""></a>

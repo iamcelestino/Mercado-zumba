@@ -247,6 +247,13 @@ use App\Model\Autenticacao;
                                     <a href="">
                                         <ion-icon name="create"></ion-icon>
                                     </a>
+                                    <a href="<?=BASE_URL?>fatura/criar/<?=$venda->id_item_venda?>">
+                                       <ion-icon name="document-outline"></ion-icon>
+                                    </a>
+
+                                    <a href="<?=BASE_URL?>fatura/gerar_fatura/<?=$venda->id_item_venda?>">
+                                        <ion-icon class="" name="download-outline"></ion-icon>
+                                    </a>
                                 </td>
                             </tr>
                     </tbody>
