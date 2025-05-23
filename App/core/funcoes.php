@@ -37,10 +37,9 @@ function escape(mixed $dado): mixed
 
 function busca_imagem($image) 
 {
-    
     if(!file_exists($image)) {
 
-        $image = ASSETS_URL.'images/undraw_pic_profile_re_7g2h.svg';
+        $image = ASSETS_URL.'/images/undraw_pic_profile_re_7g2h.svg';
     }
     else {
         $imageModel = new Imagem();

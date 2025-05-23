@@ -7,7 +7,20 @@ class Admin  extends Controller
 {
     public function index()
     {
-        $this->view('dashboard');
+        $produto = $this->load_model('produto');
+        $produtos = $produto->findAll();
+
+        dd($produtos);
+        
+
+        $vendas = $this->load_model('venda');
+        $dados_vendas = $vendas->findAll();
+        dd($dados_vendas);
+
+        $this->view('dashboard', [
+            'produtos' => $produtos,
+            'vendas' => $dados_vendas
+        ]);
     }
 
     public function produtos(): void

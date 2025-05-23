@@ -7,8 +7,10 @@
             </div>
             <?php if($produto): ?>
             <div>
+                <?php $imagem = busca_imagem($produto->imagem) ?>
+                <?php dd($imagem)?>
                 <div class="">
-                    <img src="" alt="">
+                    <img src="<?=$imagem?>" alt="">
                     <form method="POST">
                         <div>
                             <p class="">Nome <span><?=escape($produto->nome)?></span></p>
@@ -20,11 +22,7 @@
                             <input class="" type="number" name="preco_unitario" value="<?=escape($produto->preco_unitario)?>">
                             <input class="" type="number" name="id_produto" value="<?=$produto->id_produto?>">
                         </div>
-<<<<<<< HEAD
-                        <button type="submit" class="bg-[#AD1FEA] p-[0.7rem]  text-white font-medium rounded-md mt-4">Vender</button>
-=======
                         <button type="submit" class="bg-[#AD1FEA] p-[0.7rem]  text-white font-medium rounded-md mt-4">Registrar Venda</button>
->>>>>>> 9567253 (feat: add methods to models)
                     </form>
                 </div>
             </div>
