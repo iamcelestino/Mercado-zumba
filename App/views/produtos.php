@@ -3,6 +3,7 @@
 <main>
     <section>
         <div class="container py-16">
+<<<<<<< HEAD
             <div class="mb-4 sm:flex itens-center justify-between">
                 <h1 class="text-2xl font-bold">Encontre os Fornecedores Aqui</h1>
                 <div class="">
@@ -15,6 +16,20 @@
                 <?php foreach($produtos as $produto): ?>
                     <?php $imagem = busca_imagem($produto->imagem) ?>
                 <div class="bg-gray-300">
+=======
+            <div class="mb-4 sm:flex items-center justify-between">
+                <h1 class="text-2xl font-bold">Encontre os Fornecedores Aqui</h1>
+                <div class="">
+                    <input class="p-[0.4rem] border-2 border-[#AD1FEA] rounded-md" type="text">
+                    <button class="bg-[#AD1FEA] p-[0.4rem] rounded-md text-white">Pesquisar</button>
+                </div>
+            </div>
+            <?php if($produtos): ?>
+            <div class="sm:grid grid-cols-4 gap-10">
+                <?php foreach($produtos as $produto): ?>
+                    <?php $imagem = busca_imagem($produto->imagem) ?>
+                <div class="bg-gray-300  rounded-md">
+>>>>>>> 9567253 (feat: add methods to models)
                     <img src="<?=$imagem?>" alt="">
                     <div class="p-4">
                         <p class="">Nome: <span><?=escape($produto->nome)?></span></p>

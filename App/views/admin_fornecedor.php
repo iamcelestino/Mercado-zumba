@@ -183,7 +183,11 @@ use App\Model\Autenticacao;
 
   <div class="w-full sm:w-3/4 p-6">
     <div class=" mb-6">
+<<<<<<< HEAD
         <div class="border-[#AD1FEA] border-2 p-2 rounded-md">
+=======
+        <div class="">
+>>>>>>> 9567253 (feat: add methods to models)
             <h4 class="text-xl font-semibold mb-2">Welcome <span><?=Autenticacao::getNome()?></span></h4>
         </div>
     </div>
@@ -193,7 +197,11 @@ use App\Model\Autenticacao;
             <ion-icon class="text-4xl" name="apps"></ion-icon>
         </div>
         <div>
+<<<<<<< HEAD
             <h1 class="text-4xl">0</h1>
+=======
+            <h1 class="text-4xl"><?=$total_de_produtos?></h1>
+>>>>>>> 9567253 (feat: add methods to models)
             <h4 class="text-lg font-semibold">Produtos forncedidos</h4>
             <p></p>
         </div>
@@ -203,7 +211,11 @@ use App\Model\Autenticacao;
             <ion-icon class="text-4xl" name="person"></ion-icon>
         </div>
         <div>
+<<<<<<< HEAD
             <h1 class="text-4xl">0</h1>
+=======
+            <h1 class="text-4xl"><?=count($fornecedores)?></h1>
+>>>>>>> 9567253 (feat: add methods to models)
             <h4 class="text-lg font-semibold">Fornecedores</h4>
             <p></p>
         </div>
@@ -236,14 +248,27 @@ use App\Model\Autenticacao;
                                 <td class="px-6 py-4 whitespace-nowrap"><?=escape($fornecedor->nome)  ?></td>
                                 <td class="px-6 py-4 whitespace-nowrap"><?= escape($fornecedor->contacto)  ?></td>
                                 <td class="px-6 py-4 whitespace-nowrap"><?= $fornecedor->endereco ?></td>
+<<<<<<< HEAD
                                 <td class="px-6 py-4 whitespace-nowrap"> 
+=======
+                                <td class="px-6 py-4 whitespace-nowrap text-center"> 
+>>>>>>> 9567253 (feat: add methods to models)
                                 <?= isset($numero_de_produtos[$fornecedor->id_fornecedor][0]['numero_de_produtos']) 
                                         ? $numero_de_produtos[$fornecedor->id_fornecedor][0]['numero_de_produtos'] 
                                         : 0 ?>
                                 </td>
                                 <td class=" text-center text-2xl">
+<<<<<<< HEAD
                                     <a href="">editar</a>
                                     <a href="">eliminar</a>
+=======
+                                    <a href="">
+                                        <ion-icon name="create"></ion-icon>
+                                    </a>
+                                    <a href="">
+                                        <ion-icon name="close-circle"></ion-icon>
+                                    </a>
+>>>>>>> 9567253 (feat: add methods to models)
                                 </td>
                             </tr>
                     </tbody>

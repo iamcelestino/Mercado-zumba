@@ -70,4 +70,25 @@ class Itemvenda extends Model
         return $dados;
     }
 
+<<<<<<< HEAD
+=======
+    public function produtos_vendidos(): array
+    {
+        return $this->query(
+            "
+            SELECT COUNT(id_produto) as 'produtos_vendidos' FROM itemvenda
+            "
+        );
+    }
+
+    public function valor_total(): array 
+    {
+         return $this->query(
+            "
+            SELECT SUM(preco_total) as 'valor_de_vendas' FROM itemvenda
+            "
+        );
+    }
+
+>>>>>>> 9567253 (feat: add methods to models)
 }
