@@ -71,6 +71,7 @@ class Produto extends Controller
 
                 $this->itemvenda->insert($_POST);
                 $this->venda->commit();
+                $this->redirect('admin/vendas');
 
             } catch(Exception $e) {
 

@@ -71,7 +71,7 @@ class Fatura extends Controller
         <h1 class="text-center font-bold mb-4">Fatura de Venda</h1>
 
         <p class="mb-4"><strong>Data:</strong> ' . date("d/m/Y") . '</p>
-
+        
         <table class="w-full">
             <thead>
                 <tr>

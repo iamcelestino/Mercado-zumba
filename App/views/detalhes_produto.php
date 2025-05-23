@@ -8,7 +8,6 @@
             <?php if($produto): ?>
             <div>
                 <?php $imagem = busca_imagem($produto->imagem) ?>
-                <?php dd($imagem)?>
                 <div class="">
                     <img src="<?=$imagem?>" alt="">
                     <form method="POST">
