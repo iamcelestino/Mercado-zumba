@@ -70,8 +70,6 @@ class Itemvenda extends Model
         return $dados;
     }
 
-<<<<<<< HEAD
-=======
     public function produtos_vendidos(): array
     {
         return $this->query(
@@ -90,5 +88,4 @@ class Itemvenda extends Model
         );
     }
 
->>>>>>> 9567253 (feat: add methods to models)
 }

@@ -183,11 +183,7 @@ use App\Model\Autenticacao;
 
   <div class="w-full sm:w-3/4 p-6">
     <div class=" mb-6">
-<<<<<<< HEAD
-        <div class="border-[#AD1FEA] border-2 p-2 rounded-md">
-=======
         <div class="">
->>>>>>> 9567253 (feat: add methods to models)
             <h4 class="text-xl font-semibold mb-2">Welcome <span><?=Autenticacao::getNome()?></span></h4>
         </div>
     </div>
@@ -197,46 +193,30 @@ use App\Model\Autenticacao;
             <ion-icon class="text-4xl" name="apps"></ion-icon>
         </div>
         <div>
-<<<<<<< HEAD
-            <h1 class="text-4xl">0</h1>
-            <h4 class="text-lg font-semibold">Produtos Vendidos</h4>
-=======
             <h1 class="text-4xl"><?=$numero_de_produtos_vendidos?></h1>
             <h4 class="text-lg font-semibold">Produtos</h4>
->>>>>>> 9567253 (feat: add methods to models)
             <p></p>
         </div>
       </div>
       <div class="bg-white shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">
         <div class="bg-indigo-200 p-4 rounded-full">
-<<<<<<< HEAD
-            <ion-icon class="text-4xl" name="person"></ion-icon>
-        </div>
-        <div>
-            <h1 class="text-4xl">0</h1>
-            <h4 class="text-lg font-semibold">Total de Vendas</h4>
-=======
             <ion-icon class="text-4xl" name="wallet"></ion-icon>
         </div>
         <div>
             <h1 class="text-4xl"><?=$valor_total_de_vendas?></h1>
             <h4 class="text-lg font-semibold">Valor total de vendas</h4>
->>>>>>> 9567253 (feat: add methods to models)
             <p></p>
         </div>
       </div>
     </div>
 
+    
     <div class="bg-white shadow-lg rounded-lg">
         <div class="container mx-auto p-4">
           <div class="overflow-x-auto">
             <div class="sm:flex items-center justify-between">
                 <h1 class="font-bold text-xl">Vendas</h1>
-<<<<<<< HEAD
-                <a href="<?BASE_URL?>fornecedor/adicionar" class="bg-[#AD1FEA] py-2 px-4 font-bold text-white rounded-md ">adicionar fornecedor</a>
-=======
                 <a href="<?=BASE_URL?>fornecedor/adicionar" class="bg-[#AD1FEA] py-2 px-4 font-bold text-white rounded-md ">adicionar fornecedor</a>
->>>>>>> 9567253 (feat: add methods to models)
             </div>
             <div class="sm:flex items-center justify-between mb-4">
             </div>
@@ -261,17 +241,12 @@ use App\Model\Autenticacao;
                                 <td class="px-6 py-4 whitespace-nowrap"><?= $venda->venda->data_venda ?></td>
                                 <td class="px-6 py-4 whitespace-nowrap"><?= $venda->preco_total ?> </td>
                                 <td class=" text-center text-2xl">
-<<<<<<< HEAD
-                                    <a href="">editar</a>
-                                    <a href="">eliminar</a>
-=======
                                     <a href="">
                                         <ion-icon name="close-circle"></ion-icon>
                                     </a>
                                     <a href="">
                                         <ion-icon name="create"></ion-icon>
                                     </a>
->>>>>>> 9567253 (feat: add methods to models)
                                 </td>
                             </tr>
                     </tbody>

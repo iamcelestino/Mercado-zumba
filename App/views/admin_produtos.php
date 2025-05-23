@@ -178,11 +178,7 @@
   </div>
 
   <div class="w-full sm:w-3/4 p-6">
-<<<<<<< HEAD
-    <div class="p-6 mb-6">
-=======
     <div class="">
->>>>>>> 9567253 (feat: add methods to models)
       <h4 class="text-xl font-semibold mb-2">Welcome Celestino</h4>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
@@ -191,6 +187,7 @@
             <ion-icon class="text-4xl" name="person"></ion-icon>
         </div>
         <div>
+            <h1 class="text-4xl"><?=$quantidade_produtos?></h1>
             <h4 class="text-lg font-semibold">Produtos</h4>
             <p></p>
         </div>
@@ -200,6 +197,7 @@
             <ion-icon class="text-4xl" name="person"></ion-icon>
         </div>
         <div>
+              <h1 class="text-4xl"><?=count($fornecedores)?></h1>
             <h4 class="text-lg font-semibold">Fornecedores</h4>
             <p></p>
         </div>
@@ -232,12 +230,6 @@
                                 <td class="px-6 py-4 whitespace-nowrap "><?=escape($produto->nome)  ?></td>
                                 <td class="px-6 py-4 whitespace-nowrap"><?= escape($produto->fornecedor->nome)  ?></td>
                                 <td class="px-6 py-4 whitespace-nowrap"><?= $produto->preco_unitario ?></td>
-<<<<<<< HEAD
-                                <td class="px-6 py-4 whitespace-nowrap"><?= $produto->quantidade_estoque ?></td>
-                                <td class=" text-center text-2xl">
-                                    <a href="<?=BASE_URL?>produto/editar/<?=$produto->id_produto?>">editar</a>
-                                    <a href="<?=BASE_URL?>produto/editar/<?=$produto->id_produto?>">eliminar</a>
-=======
                                 <td class="px-6 py-4 whitespace-nowrap text-center"><?= $produto->quantidade_estoque ?></td>
                                 <td class=" text-center text-2xl">
                                     <a href="<?=BASE_URL?>produto/editar/<?=$produto->id_produto?>">
@@ -246,7 +238,6 @@
                                     <a href="<?=BASE_URL?>produto/editar/<?=$produto->id_produto?>">
                                         <ion-icon name="create"></ion-icon>
                                     </a>
->>>>>>> 9567253 (feat: add methods to models)
                                 </td>
                             </tr>
                     </tbody>

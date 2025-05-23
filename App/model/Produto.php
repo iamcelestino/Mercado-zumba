@@ -58,8 +58,4 @@ class Produto extends Model
 
         return $dados;
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 9567253 (feat: add methods to models)
 }

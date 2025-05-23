@@ -40,8 +40,6 @@ class Fornecedor extends Model
         return $this->query("SELECT count(id_fornecedor) as 'numero_de_produtos' FROM produto WHERE id_fornecedor = :id_fornecedor", ['id_fornecedor'=> $id_fornecedor], 'array');
     }
 
-<<<<<<< HEAD
-=======
     public function total_produtos(): array
     {
         return $this->query(
@@ -51,5 +49,4 @@ class Fornecedor extends Model
         );
     }
 
->>>>>>> 9567253 (feat: add methods to models)
 }
